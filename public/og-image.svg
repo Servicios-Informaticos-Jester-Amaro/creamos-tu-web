@@ -1,0 +1,59 @@
+<svg width="1200" height="630" viewBox="0 0 1200 630" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1200" y2="630" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#050510"/>
+      <stop offset="50%" stop-color="#0a0a18"/>
+      <stop offset="100%" stop-color="#030308"/>
+    </linearGradient>
+    <radialGradient id="auroraV" cx="0.18" cy="0.22" r="0.5">
+      <stop offset="0%" stop-color="#8b5cf6" stop-opacity="0.55"/>
+      <stop offset="100%" stop-color="#8b5cf6" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="auroraC" cx="0.85" cy="0.3" r="0.5">
+      <stop offset="0%" stop-color="#06b6d4" stop-opacity="0.5"/>
+      <stop offset="100%" stop-color="#06b6d4" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="auroraP" cx="0.7" cy="0.9" r="0.5">
+      <stop offset="0%" stop-color="#ec4899" stop-opacity="0.45"/>
+      <stop offset="100%" stop-color="#ec4899" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="grad" x1="0" y1="0" x2="900" y2="200" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#a78bfa"/>
+      <stop offset="50%" stop-color="#22d3ee"/>
+      <stop offset="100%" stop-color="#f472b6"/>
+    </linearGradient>
+    <linearGradient id="logoGrad" x1="0" y1="0" x2="160" y2="160" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#8b5cf6"/>
+      <stop offset="40%" stop-color="#a855f7"/>
+      <stop offset="72%" stop-color="#06b6d4"/>
+      <stop offset="100%" stop-color="#ec4899"/>
+    </linearGradient>
+    <filter id="glow" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur stdDeviation="6" result="b"/>
+      <feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+  </defs>
+
+  <rect width="1200" height="630" fill="url(#bg)"/>
+  <rect width="1200" height="630" fill="url(#auroraV)"/>
+  <rect width="1200" height="630" fill="url(#auroraC)"/>
+  <rect width="1200" height="630" fill="url(#auroraP)"/>
+
+  <!-- Logo hexagonal -->
+  <g transform="translate(100, 235) scale(2.5)">
+    <path d="M24 3.5 41.7 13.75v20.5L24 44.5 6.3 34.25v-20.5z" stroke="url(#logoGrad)" stroke-width="2.2" stroke-linejoin="round" fill="rgba(139,92,246,0.08)" filter="url(#glow)"/>
+    <g filter="url(#glow)" stroke="url(#logoGrad)" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" fill="none">
+      <path d="M19.5 18 14 24l5.5 6"/>
+      <path d="M28.5 18 34 24l-5.5 6"/>
+    </g>
+    <path d="M26.5 16.5 21.5 31.5" stroke="#22d3ee" stroke-width="2.4" stroke-linecap="round" filter="url(#glow)"/>
+  </g>
+
+  <!-- Texto principal -->
+  <text x="360" y="245" font-family="Inter, Arial, sans-serif" font-size="38" font-weight="600" fill="#cbd5e1" letter-spacing="2">CREAMOS TU WEB</text>
+  <text x="358" y="330" font-family="Inter, Arial, sans-serif" font-size="64" font-weight="800" fill="url(#grad)" filter="url(#glow)">Llevamos tu negocio</text>
+  <text x="360" y="405" font-family="Inter, Arial, sans-serif" font-size="64" font-weight="800" fill="#ffffff">al mundo digital</text>
+  <text x="362" y="470" font-family="Inter, Arial, sans-serif" font-size="28" font-weight="400" fill="#94a3b8">Diseño web premium · Landing pages · E-commerce</text>
+
+  <rect x="362" y="505" width="180" height="4" rx="2" fill="url(#grad)" filter="url(#glow)"/>
+</svg>

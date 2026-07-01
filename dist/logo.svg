@@ -1,0 +1,27 @@
+<svg width="48" height="48" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="ctwGrad" x1="4" y1="6" x2="44" y2="42" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#8b5cf6"/>
+      <stop offset="38%" stop-color="#a855f7"/>
+      <stop offset="70%" stop-color="#06b6d4"/>
+      <stop offset="100%" stop-color="#ec4899"/>
+    </linearGradient>
+    <linearGradient id="ctwGrad2" x1="44" y1="6" x2="4" y2="42" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#22d3ee"/>
+      <stop offset="100%" stop-color="#f472b6"/>
+    </linearGradient>
+    <filter id="ctwGlow" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur stdDeviation="1.4" result="blur"/>
+      <feMerge>
+        <feMergeNode in="blur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+  </defs>
+  <path d="M24 3.5 41.7 13.75v20.5L24 44.5 6.3 34.25v-20.5z" stroke="url(#ctwGrad)" stroke-width="2" stroke-linejoin="round" fill="rgba(139,92,246,0.06)" filter="url(#ctwGlow)"/>
+  <g filter="url(#ctwGlow)" stroke="url(#ctwGrad)" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" fill="none">
+    <path d="M19.5 18 14 24l5.5 6"/>
+    <path d="M28.5 18 34 24l-5.5 6"/>
+  </g>
+  <path d="M26.5 16.5 21.5 31.5" stroke="url(#ctwGrad2)" stroke-width="2.4" stroke-linecap="round" filter="url(#ctwGlow)"/>
+</svg>
