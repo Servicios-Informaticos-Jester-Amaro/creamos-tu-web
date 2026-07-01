@@ -76,11 +76,8 @@ const WHATSAPP_LINK = `https://wa.me/${WHATSAPP_NUMBER}?text=Hola%20Creamos%20Tu
 function AuroraBackground() {
   return (
     <div className="fixed inset-0 overflow-hidden pointer-events-none -z-50">
-      <div className="aurora-bg aurora-violet w-[600px] h-[600px] top-[40%] left-[15%]" />
-      <div className="aurora-bg aurora-purple w-[500px] h-[500px] top-[60%] right-[20%]" />
-      <div className="aurora-bg aurora-cyan w-[400px] h-[400px] top-[70%] left-[25%]" />
-      <div className="aurora-bg aurora-pink w-[450px] h-[450px] bottom-[10%] right-[15%]" />
-      <div className="aurora-bg aurora-violet w-[350px] h-[350px] top-[80%] left-[10%]" />
+      <div className="aurora-bg aurora-violet w-[500px] h-[500px] top-[50%] left-[20%]" />
+      <div className="aurora-bg aurora-cyan w-[400px] h-[400px] bottom-[20%] right-[20%]" />
     </div>
   );
 }
@@ -494,12 +491,24 @@ function PortfolioCarousel({ images }: { images: string[] }) {
     setCurrentIndex((prev) => (prev - 1 + images.length) % images.length);
   };
 
+  // Auto-advance carousel every 4 seconds
+  useEffect(() => {
+    const interval = setInterval(() => {
+      nextSlide();
+    }, 4000);
+
+    return () => clearInterval(interval);
+  }, [images.length]);
+
   return (
     <div className="relative group">
       <div className="relative overflow-hidden rounded-xl">
         <img
           src={images[currentIndex]}
           alt={`Slide ${currentIndex + 1}`}
+          width={640}
+          height={360}
+          loading="lazy"
           className="w-full aspect-video object-contain bg-[#050609] rounded-xl transition-transform duration-500"
         />
       </div>
@@ -508,13 +517,13 @@ function PortfolioCarousel({ images }: { images: string[] }) {
         <>
           <button
             onClick={prevSlide}
-            className="absolute left-2 top-1/2 -translate-y-1/2 w-8 h-8 rounded-full bg-black/60 backdrop-blur-sm flex items-center justify-center text-white opacity-0 group-hover:opacity-100 transition-opacity hover:bg-black/80"
+            className="absolute left-2 top-1/2 -translate-y-1/2 w-8 h-8 rounded-full bg-black/60 backdrop-blur-sm flex items-center justify-center text-white opacity-100 md:opacity-0 md:group-hover:opacity-100 transition-opacity hover:bg-black/80"
           >
             <ChevronLeft className="w-5 h-5" />
           </button>
           <button
             onClick={nextSlide}
-            className="absolute right-2 top-1/2 -translate-y-1/2 w-8 h-8 rounded-full bg-black/60 backdrop-blur-sm flex items-center justify-center text-white opacity-0 group-hover:opacity-100 transition-opacity hover:bg-black/80"
+            className="absolute right-2 top-1/2 -translate-y-1/2 w-8 h-8 rounded-full bg-black/60 backdrop-blur-sm flex items-center justify-center text-white opacity-100 md:opacity-0 md:group-hover:opacity-100 transition-opacity hover:bg-black/80"
           >
             <ChevronRight className="w-5 h-5" />
           </button>
@@ -542,7 +551,7 @@ function PortfolioSection() {
       title: 'Portal Corporativo',
       category: 'Web Corporativa',
       description: 'Sitio web elegante y profesional para empresas de servicios, optimizado para presencia institucional.',
-      images: ['/portafolio/empresa-global.png', '/portafolio/turismo.png', '/portafolio/transporte.png'],
+      images: ['/portafolio/empresa-global.webp', '/portafolio/turismo.webp', '/portafolio/transporte.webp'],
       tags: ['React', 'Vite', 'SEO'],
       borderColor: 'border-violet-500/30',
     },
@@ -550,7 +559,7 @@ function PortfolioSection() {
       title: 'Landing Page',
       category: 'Landing Page',
       description: 'Landing page promocional de alta conversión diseñada para campañas específicas y captura de clientes.',
-      images: ['/portafolio/Reposteria.png', '/portafolio/delivery.png', '/portafolio/limpieza.png'],
+      images: ['/portafolio/reposteria.webp', '/portafolio/delivery.webp', '/portafolio/limpieza.webp'],
       tags: ['React', 'Tailwind', 'Conversión'],
       borderColor: 'border-pink-500/30',
     },
@@ -558,7 +567,7 @@ function PortfolioSection() {
       title: 'Catálogo Digital Express',
       category: 'E-commerce',
       description: 'Tienda en línea optimizada para mostrar productos con sistema de pedidos directos a WhatsApp.',
-      images: ['/portafolio/catalogo-deportes.png', '/portafolio/catalogo-tech.png', '/portafolio/catalogo-hogar.png'],
+      images: ['/portafolio/catalogo-deportes.webp', '/portafolio/catalogo-tech.webp', '/portafolio/catalogo-hogar.webp'],
       tags: ['React', 'WhatsApp', 'Cloud'],
       borderColor: 'border-cyan-500/30',
     },
