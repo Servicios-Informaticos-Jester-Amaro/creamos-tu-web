@@ -21,9 +21,14 @@ import {
   ExternalLink,
   Menu,
   X,
+  Workflow,
+  Activity,
+  Bot,
+  Database,
+  AlertCircle,
 } from 'lucide-react';
 
-const SHEET_URL = "";
+const SHEET_URL = "https://script.google.com/macros/s/AKfycbyuAmWUHUGZWMq-H4-aeb7RLcwdpL1hcCzhEMuprHZUV94YDp-KgMI5TiC7HS8lg3HW/exec";
 
 function CyberLogo({ className = 'w-9 h-9' }: { className?: string }) {
   return (
@@ -73,7 +78,6 @@ function CyberLogo({ className = 'w-9 h-9' }: { className?: string }) {
 const WHATSAPP_NUMBER = '584160200724';
 const WHATSAPP_LINK = `https://wa.me/${WHATSAPP_NUMBER}?text=Hola%20Creamos%20Tu%20Web,%20quiero%20iniciar%20mi%20proyecto%20web.`;
 
-// ✅ SOLUCIÓN 1: Reducido de 5 a 2 auroras para aliviar la GPU
 function AuroraBackground() {
   return (
     <div className="fixed inset-0 overflow-hidden pointer-events-none -z-50">
@@ -114,14 +118,10 @@ function Navbar() {
     { label: 'Contacto', id: 'contacto' },
   ];
 
-  // ✅ SOLUCIÓN 4: Fondo sólido al inicio, blur solo al hacer scroll
   return (
     <nav
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${
-        scrolled || menuOpen
-          ? 'backdrop-blur-md bg-[#050609]/90 border-b border-white/5'
-          : 'bg-[#050609]'
-      }`}
+      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${scrolled || menuOpen ? 'backdrop-blur-md bg-[#050609]/90 border-b border-white/5' : 'bg-[#050609]'
+        }`}
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-16 sm:h-20">
@@ -155,14 +155,12 @@ function Navbar() {
           >
             <span className="relative w-5 h-5">
               <Menu
-                className={`absolute inset-0 w-5 h-5 transition-all duration-300 ${
-                  menuOpen ? 'opacity-0 rotate-90 scale-50' : 'opacity-100 rotate-0 scale-100'
-                }`}
+                className={`absolute inset-0 w-5 h-5 transition-all duration-300 ${menuOpen ? 'opacity-0 rotate-90 scale-50' : 'opacity-100 rotate-0 scale-100'
+                  }`}
               />
               <X
-                className={`absolute inset-0 w-5 h-5 transition-all duration-300 ${
-                  menuOpen ? 'opacity-100 rotate-0 scale-100' : 'opacity-0 -rotate-90 scale-50'
-                }`}
+                className={`absolute inset-0 w-5 h-5 transition-all duration-300 ${menuOpen ? 'opacity-100 rotate-0 scale-100' : 'opacity-0 -rotate-90 scale-50'
+                  }`}
               />
             </span>
           </button>
@@ -170,9 +168,8 @@ function Navbar() {
       </div>
 
       <div
-        className={`md:hidden overflow-hidden transition-all duration-500 ease-in-out ${
-          menuOpen ? 'max-h-[420px] opacity-100' : 'max-h-0 opacity-0'
-        }`}
+        className={`md:hidden overflow-hidden transition-all duration-500 ease-in-out ${menuOpen ? 'max-h-[420px] opacity-100' : 'max-h-0 opacity-0'
+          }`}
       >
         <div className="px-4 sm:px-6 pb-6 pt-2 flex flex-col gap-1 border-t border-white/5">
           {navItems.map((item, i) => (
@@ -180,9 +177,8 @@ function Navbar() {
               key={item.id}
               onClick={() => scrollTo(item.id)}
               style={{ transitionDelay: menuOpen ? `${i * 60}ms` : '0ms' }}
-              className={`group flex items-center justify-between px-4 py-3 rounded-xl text-left text-slate-200 hover:text-white glass-card-hover transition-all duration-300 ${
-                menuOpen ? 'translate-x-0 opacity-100' : '-translate-x-4 opacity-0'
-              }`}
+              className={`group flex items-center justify-between px-4 py-3 rounded-xl text-left text-slate-200 hover:text-white glass-card-hover transition-all duration-300 ${menuOpen ? 'translate-x-0 opacity-100' : '-translate-x-4 opacity-0'
+                }`}
             >
               <span className="text-base font-medium">{item.label}</span>
               <ChevronRight className="w-4 h-4 text-neon-cyan opacity-0 -translate-x-2 group-hover:opacity-100 group-hover:translate-x-0 transition-all duration-300" />
@@ -212,8 +208,9 @@ function HeroSection() {
             </h1>
 
             <p className="text-base sm:text-lg text-slate-400 leading-relaxed mb-8 max-w-xl fade-in-up fade-in-up-delay-2">
-              Diseñamos páginas web de alta velocidad, landing pages de alta conversión y catálogos
-              e-commerce completamente optimizados para teléfonos celulares.
+              Diseñamos páginas web de alto impacto, sistemas a medida y automatizaciones que
+              eliminan lo repetitivo en tu negocio. Todo optimizado para móvil y construido para
+              crecer contigo.
             </p>
 
             <div className="flex flex-col sm:flex-row gap-4 fade-in-up fade-in-up-delay-3">
@@ -327,12 +324,28 @@ function ServicesSection() {
       glowClass: 'icon-glow-cyan',
     },
     {
+      icon: Cpu,
+      title: 'Sistemas a Medida para tu Negocio',
+      description:
+        'Software personalizado que se adapta a cómo trabaja tu empresa. Paneles administrativos, gestión interna, control de inventario, CRM propio — construido desde cero para resolver tus operaciones únicas.',
+      color: 'violet',
+      glowClass: 'icon-glow-violet',
+    },
+    {
       icon: ShoppingCart,
       title: 'Catálogos E-commerce',
       description:
         'Tiendas en línea completamente optimizadas para navegación móvil y ventas fluidas. Integración de pagos, carrito inteligente y gestión de inventario.',
       color: 'pink',
       glowClass: 'icon-glow-pink',
+    },
+    {
+      icon: Workflow,
+      title: 'Automatización de Procesos',
+      description:
+        'Conectamos tus herramientas y eliminamos las tareas repetitivas. Flujos de WhatsApp, email, hojas de cálculo, formularios y más — todo trabajando solo mientras tú te enfocas en crecer.',
+      color: 'cyan',
+      glowClass: 'icon-glow-cyan',
     },
     {
       icon: ShieldCheck,
@@ -369,25 +382,29 @@ function ServicesSection() {
           </p>
         </div>
 
-        <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
+        <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
           {services.map((service, i) => (
             <div
               key={i}
               className="glass-card glass-card-hover rounded-2xl p-6 sm:p-8 group"
             >
               <div
-                className={`w-14 h-14 rounded-xl bg-gradient-to-br from-white/5 to-white/10 flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300 ${
-                  service.color === 'violet' ? 'neon-border' : service.color === 'cyan' ? 'neon-border-cyan' : ''
-                }`}
+                className={`w-14 h-14 rounded-xl bg-gradient-to-br from-white/5 to-white/10 flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300 ${service.color === 'violet' ? 'neon-border' : service.color === 'cyan' ? 'neon-border-cyan' : ''
+                  }`}
               >
                 <service.icon className={`w-7 h-7 ${colorMap[service.color]} ${service.glowClass}`} />
               </div>
               <h3 className="text-lg font-bold text-white mb-3">{service.title}</h3>
               <p className="text-sm text-slate-400 leading-relaxed">{service.description}</p>
-              <div className="mt-6 flex items-center gap-2 text-sm font-medium text-violet-400 opacity-0 group-hover:opacity-100 transition-opacity">
+              <a
+                href={`https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(`Hola! Me interesa el servicio de ${service.title}`)}`}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="mt-6 inline-flex items-center gap-2 text-sm font-medium text-violet-400 opacity-0 group-hover:opacity-100 transition-opacity hover:text-cyan-400 cursor-pointer"
+              >
                 <span>Saber más</span>
                 <ArrowRight className="w-4 h-4" />
-              </div>
+              </a>
             </div>
           ))}
         </div>
@@ -422,6 +439,11 @@ function ValuePropositionSection() {
       icon: Zap,
       title: 'Tiempos de Entrega Rápidos',
       description: 'Procesos ágiles que garantizan resultados en tiempo récord sin sacrificar calidad.',
+    },
+    {
+      icon: Activity,
+      title: 'Monitoreo Transparente 24/7',
+      description: 'Vigilamos en segundo plano tus bases de datos y saldos de APIs de IA con alertas proactivas. Tú usas la tecnología sin miedo, nosotros nos encargamos de que todo funcione.',
     },
   ];
 
@@ -484,8 +506,6 @@ function ValuePropositionSection() {
   );
 }
 
-// ✅ SOLUCIÓN 2: Carrusel simplificado - sin precarga JS, sin estado isLoaded
-// Solo loading="lazy", width/height fijos y aspect-video
 function PortfolioCarousel({ images }: { images: string[] }) {
   const [currentIndex, setCurrentIndex] = useState(0);
 
@@ -497,7 +517,6 @@ function PortfolioCarousel({ images }: { images: string[] }) {
     setCurrentIndex((prev) => (prev - 1 + images.length) % images.length);
   };
 
-  // Auto-advance cada 4 segundos
   useEffect(() => {
     const interval = setInterval(() => {
       nextSlide();
@@ -539,9 +558,8 @@ function PortfolioCarousel({ images }: { images: string[] }) {
               <button
                 key={idx}
                 onClick={() => setCurrentIndex(idx)}
-                className={`w-1.5 h-1.5 rounded-full transition-all ${
-                  idx === currentIndex ? 'bg-white w-4' : 'bg-white/50'
-                }`}
+                className={`w-1.5 h-1.5 rounded-full transition-all ${idx === currentIndex ? 'bg-white w-4' : 'bg-white/50'
+                  }`}
               />
             ))}
           </div>
@@ -777,6 +795,74 @@ function PricingSection() {
               </div>
             );
           })}
+        </div>
+
+        <div className="glass-card rounded-2xl p-6 sm:p-8 mb-12 neon-border group hover:scale-[1.02] transition-all duration-300">
+          <div className="grid lg:grid-cols-2 gap-6 items-center">
+            <div>
+              <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-gradient-to-r from-violet-500/20 to-cyan-500/20 border border-violet-500/30 mb-4">
+                <Bot className="w-4 h-4 text-violet-400" />
+                <span className="text-xs font-semibold text-violet-300">SOLUCIONES AVANZADAS</span>
+              </div>
+              <h3 className="text-2xl sm:text-3xl font-bold text-white mb-3">
+                Sistemas a Medida, Automatizaciones e IA
+              </h3>
+              <p className="text-slate-400 leading-relaxed mb-4">
+                ¿Necesitas algo más complejo? Desarrollamos soluciones personalizadas con APIs de IA,
+                bases de datos en Supabase, automatizaciones avanzadas y más.
+                <span className="text-cyan-400 font-semibold"> Infraestructura a nombre del cliente</span>
+                para total transparencia en costos.
+              </p>
+              <div className="flex flex-wrap gap-3">
+                <div className="flex items-center gap-2 text-sm text-slate-300">
+                  <Database className="w-4 h-4 text-cyan-400" />
+                  <span>Bases de datos propias</span>
+                </div>
+                <div className="flex items-center gap-2 text-sm text-slate-300">
+                  <Bot className="w-4 h-4 text-violet-400" />
+                  <span>Integración con IA</span>
+                </div>
+                <div className="flex items-center gap-2 text-sm text-slate-300">
+                  <Activity className="w-4 h-4 text-pink-400" />
+                  <span>Automatizaciones</span>
+                </div>
+              </div>
+            </div>
+
+            <div className="space-y-4">
+              <div className="bg-gradient-to-br from-violet-500/10 to-cyan-500/10 rounded-xl p-6 border border-violet-500/20">
+                <div className="flex items-center gap-3 mb-3">
+                  <AlertCircle className="w-6 h-6 text-cyan-400" />
+                  <span className="text-lg font-bold text-white">Bajo Cotización</span>
+                </div>
+                <p className="text-sm text-slate-300 mb-4">
+                  Cada proyecto es único. Analizamos tus necesidades y te presentamos un presupuesto
+                  detallado con costos de infraestructura separados.
+                </p>
+                <div className="pt-4 border-t border-white/10">
+                  <div className="flex items-center justify-between mb-2">
+                    <span className="text-sm text-slate-400">Mantenimiento y Monitoreo Activo:</span>
+                  </div>
+                  <div className="flex items-baseline gap-2">
+                    <span className="text-3xl font-bold text-white">Desde $20</span>
+                    <span className="text-sm text-slate-400">USD/mes</span>
+                  </div>
+                  <p className="text-xs text-slate-500 mt-2">
+                    Incluye soporte técnico, monitoreo de APIs, alertas proactivas y actualizaciones
+                  </p>
+                </div>
+              </div>
+
+              <a
+                href={`https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent('Hola! Me interesa cotizar un proyecto de Sistemas a Medida, Automatizaciones o IA. ¿Podemos hablar?')}`}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="w-full py-3 rounded-xl bg-gradient-to-r from-violet-600 via-purple-600 to-cyan-600 text-white font-semibold text-center block btn-glow hover:scale-105 transition-transform"
+              >
+                Cotizar mi Proyecto
+              </a>
+            </div>
+          </div>
         </div>
 
         <div className="glass-card rounded-2xl p-6 sm:p-8 max-w-3xl mx-auto">

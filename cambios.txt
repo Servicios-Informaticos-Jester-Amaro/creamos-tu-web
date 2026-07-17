@@ -1,0 +1,109 @@
+diff --git a/index.html b/index.html
+index 8e8e94d..7fb396e 100644
+--- a/index.html
++++ b/index.html
+@@ -5,14 +5,14 @@
+     <link rel="icon" type="image/svg+xml" href="/logo.svg" />
+     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+     <meta name="theme-color" content="#030308" />
+-    <title>Creamos Tu Web | Agencia de Desarrollo Web Premium</title>
+-    <meta name="description" content="Diseñamos páginas web de alta velocidad, landing pages de alta conversión y catálogos e-commerce optimizados para móviles." />
++    <title>Creamos Tu Web | Agencia de Soluciones Digitales</title>
++    <meta name="description" content="Páginas web de alto impacto, sistemas a medida y automatizaciones para tu negocio. Diseño premium, alta velocidad y optimizado para móvil." />
+ 
+     <!-- Open Graph / Facebook / WhatsApp -->
+     <meta property="og:type" content="website" />
+     <meta property="og:site_name" content="Creamos Tu Web" />
+-    <meta property="og:title" content="Creamos Tu Web | Agencia de Desarrollo Web Premium" />
+-    <meta property="og:description" content="Llevamos tu negocio al mundo digital con diseño web de alta calidad." />
++    <meta property="og:title" content="Creamos Tu Web | Agencia de Soluciones Digitales" />
++    <meta property="og:description" content="Páginas web de alto impacto, sistemas a medida y automatizaciones para tu negocio. Diseño premium, alta velocidad y optimizado para móvil." />
+     <meta property="og:image" content="/og-image.png" />
+     <meta property="og:image:width" content="1200" />
+     <meta property="og:image:height" content="630" />
+@@ -21,8 +21,8 @@
+ 
+     <!-- Twitter -->
+     <meta name="twitter:card" content="summary_large_image" />
+-    <meta name="twitter:title" content="Creamos Tu Web | Agencia de Desarrollo Web Premium" />
+-    <meta name="twitter:description" content="Llevamos tu negocio al mundo digital con diseño web de alta calidad." />
++    <meta name="twitter:title" content="Creamos Tu Web | Agencia de Soluciones Digitales" />
++    <meta name="twitter:description" content="Páginas web de alto impacto, sistemas a medida y automatizaciones para tu negocio. Diseño premium, alta velocidad y optimizado para móvil." />
+     <meta name="twitter:image" content="/og-image.png" />
+   </head>
+   <body>
+diff --git a/package-lock.json b/package-lock.json
+index 0ca0d99..fe384d8 100644
+--- a/package-lock.json
++++ b/package-lock.json
+@@ -2879,6 +2879,7 @@
+       "version": "0.344.0",
+       "resolved": "https://registry.npmjs.org/lucide-react/-/lucide-react-0.344.0.tgz",
+       "integrity": "sha512-6YyBnn91GB45VuVT96bYCOKElbJzUHqp65vX8cDcu55MQL9T969v4dhGClpljamuI/+KMO9P6w9Acq1CVQGvIQ==",
++      "license": "ISC",
+       "peerDependencies": {
+         "react": "^16.5.1 || ^17.0.0 || ^18.0.0"
+       }
+diff --git a/src/components/LandingPage.tsx b/src/components/LandingPage.tsx
+index d95876e..1f800de 100644
+--- a/src/components/LandingPage.tsx
++++ b/src/components/LandingPage.tsx
+@@ -21,6 +21,7 @@ import {
+   ExternalLink,
+   Menu,
+   X,
++  Workflow,
+ } from 'lucide-react';
+ 
+ const SHEET_URL = "";
+@@ -212,8 +213,9 @@ function HeroSection() {
+             </h1>
+ 
+             <p className="text-base sm:text-lg text-slate-400 leading-relaxed mb-8 max-w-xl fade-in-up fade-in-up-delay-2">
+-              Diseñamos páginas web de alta velocidad, landing pages de alta conversión y catálogos
+-              e-commerce completamente optimizados para teléfonos celulares.
++              Diseñamos páginas web de alto impacto, sistemas a medida y automatizaciones que
++              eliminan lo repetitivo en tu negocio. Todo optimizado para móvil y construido para
++              crecer contigo.
+             </p>
+ 
+             <div className="flex flex-col sm:flex-row gap-4 fade-in-up fade-in-up-delay-3">
+@@ -326,6 +328,14 @@ function ServicesSection() {
+       color: 'cyan',
+       glowClass: 'icon-glow-cyan',
+     },
++    {
++      icon: Cpu,
++      title: 'Sistemas a Medida para tu Negocio',
++      description:
++        'Software personalizado que se adapta a cómo trabaja tu empresa. Paneles administrativos, gestión interna, control de inventario, CRM propio — construido desde cero para resolver tus operaciones únicas.',
++      color: 'violet',
++      glowClass: 'icon-glow-violet',
++    },
+     {
+       icon: ShoppingCart,
+       title: 'Catálogos E-commerce',
+@@ -334,6 +344,14 @@ function ServicesSection() {
+       color: 'pink',
+       glowClass: 'icon-glow-pink',
+     },
++    {
++      icon: Workflow,
++      title: 'Automatización de Procesos',
++      description:
++        'Conectamos tus herramientas y eliminamos las tareas repetitivas. Flujos de WhatsApp, email, hojas de cálculo, formularios y más — todo trabajando solo mientras tú te enfocas en crecer.',
++      color: 'cyan',
++      glowClass: 'icon-glow-cyan',
++    },
+     {
+       icon: ShieldCheck,
+       title: 'Optimización y Soporte',
+@@ -369,7 +387,7 @@ function ServicesSection() {
+           </p>
+         </div>
+ 
+-        <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
++        <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+           {services.map((service, i) => (
+             <div
+               key={i}
