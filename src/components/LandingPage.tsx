@@ -196,18 +196,18 @@ function HeroSection() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
         <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
           <div className="relative z-10">
-            <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full glass-card mb-8 fade-in-up">
+            <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full glass-card mb-4 sm:mb-6 lg:mb-8 fade-in-up">
               <div className="w-2 h-2 rounded-full bg-green-400 animate-pulse" />
               <span className="text-xs sm:text-sm text-slate-300">Agencia Web Premium</span>
             </div>
 
-            <h1 className="text-4xl sm:text-5xl lg:text-6xl xl:text-7xl font-extrabold leading-[1.1] mb-6 fade-in-up fade-in-up-delay-1">
+            <h1 className="text-4xl sm:text-5xl lg:text-6xl xl:text-7xl font-extrabold leading-[1.1] mb-4 sm:mb-6 fade-in-up fade-in-up-delay-1">
               <span className="gradient-text">Llevamos tu negocio</span>
               <br />
               <span className="text-white">al mundo digital</span>
             </h1>
 
-            <p className="text-base sm:text-lg text-slate-400 leading-relaxed mb-8 max-w-xl fade-in-up fade-in-up-delay-2">
+            <p className="text-base sm:text-lg text-slate-400 leading-relaxed mb-6 sm:mb-8 max-w-xl fade-in-up fade-in-up-delay-2">
               Diseñamos páginas web de alto impacto, sistemas a medida y automatizaciones que
               eliminan lo repetitivo en tu negocio. Todo optimizado para móvil y construido para
               crecer contigo.
@@ -223,7 +223,7 @@ function HeroSection() {
               </button>
             </div>
 
-            <div className="flex items-center gap-6 mt-10 fade-in-up fade-in-up-delay-4">
+            <div className="flex items-center gap-4 sm:gap-6 mt-6 sm:mt-10 fade-in-up fade-in-up-delay-4">
               <div className="flex -space-x-3">
                 {[1, 2, 3, 4].map((i) => (
                   <div
