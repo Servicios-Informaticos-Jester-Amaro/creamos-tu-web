@@ -192,7 +192,7 @@ function Navbar() {
 
 function HeroSection() {
   return (
-    <section id="hero" className="relative min-h-screen flex items-center pt-24 pb-8 overflow-hidden">
+    <section id="hero" className="relative min-h-screen flex items-center pt-16 sm:pt-20 lg:pt-24 pb-8 overflow-hidden">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
         <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
           <div className="relative z-10">
