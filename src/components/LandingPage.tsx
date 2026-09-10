@@ -262,7 +262,7 @@ function HeroSection() {
                     <Zap className="w-5 h-5 text-yellow-400" />
                     <div>
                       <div className="text-xs font-semibold text-white">Ultra rápido</div>
-                      <div className="text-[10px] text-slate-400">< 1s carga</div>
+                      <div className="text-[10px] text-slate-400">&lt; 1s carga</div>
                     </div>
                   </div>
                 </div>
