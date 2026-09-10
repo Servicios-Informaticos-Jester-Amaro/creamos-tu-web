@@ -572,8 +572,7 @@ function PortfolioCarousel({ images }: { images: string[] }) {
 function PortfolioSection() {
   const projects = [
     {
-      title: 'Portal Corporativo',
-      category: 'Web Corporativa',
+      title: 'Web Corporativa',
       description: 'Sitio web elegante y profesional para empresas de servicios, optimizado para presencia institucional.',
       images: ['/portafolio/empresa-global.webp', '/portafolio/turismo.webp', '/portafolio/transporte.webp'],
       tags: ['React', 'Vite', 'SEO'],
@@ -581,15 +580,13 @@ function PortfolioSection() {
     },
     {
       title: 'Landing Page',
-      category: 'Landing Page',
       description: 'Landing page promocional de alta conversión diseñada para campañas específicas y captura de clientes.',
       images: ['/portafolio/reposteria.webp', '/portafolio/delivery.webp', '/portafolio/limpieza.webp'],
       tags: ['React', 'Tailwind', 'Conversión'],
       borderColor: 'border-pink-500/30',
     },
     {
-      title: 'Catálogo Digital Express',
-      category: 'E-commerce',
+      title: 'E-commerce',
       description: 'Tienda en línea optimizada para mostrar productos con sistema de pedidos directos a WhatsApp.',
       images: ['/portafolio/catalogo-deportes.webp', '/portafolio/catalogo-tech.webp', '/portafolio/catalogo-hogar.webp'],
       tags: ['React', 'WhatsApp', 'Cloud'],
@@ -1037,7 +1034,7 @@ function Footer() {
             <div className="w-8 h-8 rounded-lg bg-gradient-to-br from-violet-500 to-cyan-400 flex items-center justify-center">
               <Code2 className="w-5 h-5 text-white" />
             </div>
-            <span className="font-bold text-xl text-white">Servicios Informáticos J.A.</span>
+            <span className="font-bold text-xl text-white">Creamos Tu Web</span>
           </div>
           <p className="text-sm text-slate-500">
             Servicios Informáticos J.A. · RIF: V-14899001-4<br />
