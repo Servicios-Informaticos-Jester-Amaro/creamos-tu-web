@@ -660,8 +660,8 @@ function PricingSection() {
   const plans = [
     {
       title: 'Landing Page Express',
-      price: 60,
-      maintenance: 10,
+      price: 100,
+      maintenance: 20,
       description: 'Diseño y Montaje',
       features: [
         'Diseño de una sola página enfocado en ventas',
@@ -674,9 +674,9 @@ function PricingSection() {
       color: 'violet',
     },
     {
-      title: 'Página Web Corporativa',
-      price: 120,
-      maintenance: 15,
+      title: 'Web Corporativa',
+      price: 200,
+      maintenance: 30,
       description: 'Diseño y Montaje',
       features: [
         'Estructura institucional con secciones (Inicio, Quiénes Somos, Servicios, Galería, Testimonios y Contacto)',
@@ -688,9 +688,9 @@ function PricingSection() {
       color: 'cyan',
     },
     {
-      title: 'Catálogo Digital Express',
-      price: 180,
-      maintenance: 20,
+      title: 'E-commerce',
+      price: 300,
+      maintenance: 50,
       description: 'Diseño y Montaje',
       features: [
         'Tienda en línea con carrito de compras',
@@ -1037,13 +1037,14 @@ function Footer() {
             <div className="w-8 h-8 rounded-lg bg-gradient-to-br from-violet-500 to-cyan-400 flex items-center justify-center">
               <Code2 className="w-5 h-5 text-white" />
             </div>
-            <span className="font-bold text-xl text-white">Creamos Tu Web</span>
+            <span className="font-bold text-xl text-white">Servicios Informáticos J.A.</span>
           </div>
           <p className="text-sm text-slate-500">
-            © {new Date().getFullYear()} Creamos Tu Web. Todos los derechos reservados.
+            Servicios Informáticos J.A. · RIF: V-14899001-4<br />
+            San Carlos, Cojedes, Venezuela
           </p>
           <p className="text-xs text-slate-600">
-            Desarrollado por Servicios Informáticos JA
+            © 2026 Todos los derechos reservados.
           </p>
         </div>
       </div>
