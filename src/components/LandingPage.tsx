@@ -572,8 +572,7 @@ function PortfolioCarousel({ images }: { images: string[] }) {
 function PortfolioSection() {
   const projects = [
     {
-      title: 'Portal Corporativo',
-      category: 'Web Corporativa',
+      title: 'Web Corporativa',
       description: 'Sitio web elegante y profesional para empresas de servicios, optimizado para presencia institucional.',
       images: ['/portafolio/empresa-global.webp', '/portafolio/turismo.webp', '/portafolio/transporte.webp'],
       tags: ['React', 'Vite', 'SEO'],
@@ -581,15 +580,13 @@ function PortfolioSection() {
     },
     {
       title: 'Landing Page',
-      category: 'Landing Page',
       description: 'Landing page promocional de alta conversión diseñada para campañas específicas y captura de clientes.',
       images: ['/portafolio/reposteria.webp', '/portafolio/delivery.webp', '/portafolio/limpieza.webp'],
       tags: ['React', 'Tailwind', 'Conversión'],
       borderColor: 'border-pink-500/30',
     },
     {
-      title: 'Catálogo Digital Express',
-      category: 'E-commerce',
+      title: 'E-commerce',
       description: 'Tienda en línea optimizada para mostrar productos con sistema de pedidos directos a WhatsApp.',
       images: ['/portafolio/catalogo-deportes.webp', '/portafolio/catalogo-tech.webp', '/portafolio/catalogo-hogar.webp'],
       tags: ['React', 'WhatsApp', 'Cloud'],
@@ -660,8 +657,8 @@ function PricingSection() {
   const plans = [
     {
       title: 'Landing Page Express',
-      price: 60,
-      maintenance: 10,
+      price: 100,
+      maintenance: 20,
       description: 'Diseño y Montaje',
       features: [
         'Diseño de una sola página enfocado en ventas',
@@ -674,9 +671,9 @@ function PricingSection() {
       color: 'violet',
     },
     {
-      title: 'Página Web Corporativa',
-      price: 120,
-      maintenance: 15,
+      title: 'Web Corporativa',
+      price: 200,
+      maintenance: 30,
       description: 'Diseño y Montaje',
       features: [
         'Estructura institucional con secciones (Inicio, Quiénes Somos, Servicios, Galería, Testimonios y Contacto)',
@@ -688,9 +685,9 @@ function PricingSection() {
       color: 'cyan',
     },
     {
-      title: 'Catálogo Digital Express',
-      price: 180,
-      maintenance: 20,
+      title: 'E-commerce',
+      price: 300,
+      maintenance: 50,
       description: 'Diseño y Montaje',
       features: [
         'Tienda en línea con carrito de compras',
@@ -1040,10 +1037,11 @@ function Footer() {
             <span className="font-bold text-xl text-white">Creamos Tu Web</span>
           </div>
           <p className="text-sm text-slate-500">
-            © {new Date().getFullYear()} Creamos Tu Web. Todos los derechos reservados.
+            Servicios Informáticos J.A. · RIF: V-14899001-4<br />
+            San Carlos, Cojedes, Venezuela
           </p>
           <p className="text-xs text-slate-600">
-            Desarrollado por Servicios Informáticos JA
+            © 2026 Todos los derechos reservados.
           </p>
         </div>
       </div>
