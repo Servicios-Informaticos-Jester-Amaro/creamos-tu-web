@@ -696,6 +696,7 @@ function PricingSection() {
         'Buscador interno',
         'Categorías',
         'Hasta 3 rondas de modificaciones',
+        'Opcional: Reportes bajo demanda generados por IA (+$25 USD)',
       ],
       color: 'pink',
     },
