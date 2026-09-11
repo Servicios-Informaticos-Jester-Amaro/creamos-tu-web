@@ -80,10 +80,20 @@ const WHATSAPP_LINK = `https://wa.me/${WHATSAPP_NUMBER}?text=Hola%20Creamos%20Tu
 
 function AuroraBackground() {
   return (
-    <div className="fixed inset-0 overflow-hidden pointer-events-none -z-50">
-      <div className="aurora-bg aurora-violet w-[500px] h-[500px] top-[50%] left-[20%]" />
-      <div className="aurora-bg aurora-cyan w-[400px] h-[400px] bottom-[20%] right-[20%]" />
-    </div>
+    <>
+      {/* Aurora móvil: blur reducido, opacidad alta, visible en <1024px */}
+      <div className="fixed inset-0 overflow-hidden pointer-events-none z-0 solo-movil">
+        <div className="absolute w-[300px] h-[300px] top-[10%] left-[5%] rounded-full opacity-60 blur-[60px]"
+             style={{ background: 'radial-gradient(circle, rgba(139,92,246,0.9) 0%, rgba(139,92,246,0) 70%)' }} />
+        <div className="absolute w-[250px] h-[250px] bottom-[15%] right-[5%] rounded-full opacity-50 blur-[50px]"
+             style={{ background: 'radial-gradient(circle, rgba(6,182,212,0.9) 0%, rgba(6,182,212,0) 70%)' }} />
+      </div>
+      {/* Aurora desktop: sin cambios */}
+      <div className="fixed inset-0 overflow-hidden pointer-events-none z-0 hidden lg:block">
+        <div className="aurora-bg aurora-violet w-[500px] h-[500px] top-[50%] left-[20%]" />
+        <div className="aurora-bg aurora-cyan w-[400px] h-[400px] bottom-[20%] right-[20%]" />
+      </div>
+    </>
   );
 }
 
@@ -245,6 +255,19 @@ function HeroSection() {
             </div>
           </div>
 
+            <div className="absolute inset-0 pointer-events-none solo-movil">
+              <div className="absolute top-24 right-4 floating">
+                <div className="glass-card rounded-xl p-3">
+                  <div className="flex items-center gap-2">
+                    <Zap className="w-5 h-5 text-yellow-400" />
+                    <div>
+                      <div className="text-xs font-semibold text-white">Ultra rápido</div>
+                      <div className="text-[10px] text-slate-400">&lt; 1s carga</div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
           <div className="relative hidden lg:block">
             <div className="relative w-full aspect-square max-w-lg mx-auto">
               <div className="absolute inset-0 rounded-3xl bg-gradient-to-br from-violet-500/20 to-cyan-500/20 blur-3xl" />
@@ -1037,7 +1060,7 @@ function Footer() {
             </div>
             <span className="font-bold text-xl text-white">Creamos Tu Web</span>
           </div>
-          <p className="text-sm text-slate-500">
+          <p className="text-sm text-slate-500 text-center">
             Servicios Informáticos J.A. · RIF: V-14899001-4<br />
             San Carlos, Cojedes, Venezuela
           </p>
