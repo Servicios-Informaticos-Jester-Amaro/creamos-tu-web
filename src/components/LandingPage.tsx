@@ -1060,7 +1060,7 @@ function Footer() {
             </div>
             <span className="font-bold text-xl text-white">Creamos Tu Web</span>
           </div>
-          <p className="text-sm text-slate-500">
+          <p className="text-sm text-slate-500 text-center">
             Servicios Informáticos J.A. · RIF: V-14899001-4<br />
             San Carlos, Cojedes, Venezuela
           </p>
