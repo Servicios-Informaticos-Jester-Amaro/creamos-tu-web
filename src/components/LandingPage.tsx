@@ -75,7 +75,7 @@ function CyberLogo({ className = 'w-9 h-9' }: { className?: string }) {
   );
 }
 
-const WHATSAPP_NUMBER = '584160200724';
+const WHATSAPP_NUMBER = '584241437486';
 const WHATSAPP_LINK = `https://wa.me/${WHATSAPP_NUMBER}?text=Hola%20Creamos%20Tu%20Web,%20quiero%20iniciar%20mi%20proyecto%20web.`;
 
 function AuroraBackground() {
