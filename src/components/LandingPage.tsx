@@ -1064,6 +1064,12 @@ function Footer() {
             Servicios Informáticos J.A. · RIF: V-14899001-4<br />
             San Carlos, Cojedes, Venezuela
           </p>
+          <p className="text-xs text-slate-600 text-center max-w-2xl leading-relaxed">
+            Los datos que envíes por el formulario (nombre, teléfono, correo y mensaje)
+            se usan únicamente para responder tu solicitud y contactarte sobre tu proyecto.
+            No se comparten con terceros ni se usan para publicidad.
+            Podés solicitar su eliminación escribiéndonos por WhatsApp.
+          </p>
           <p className="text-xs text-slate-600">
             © 2026 Todos los derechos reservados.
           </p>
