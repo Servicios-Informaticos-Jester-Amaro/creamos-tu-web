@@ -1061,7 +1061,8 @@ function Footer() {
             <span className="font-bold text-xl text-white">Creamos Tu Web</span>
           </div>
           <p className="text-sm text-slate-500 text-center">
-            Servicios Informáticos Jester Amaro, F.P. · RIF: V-14899001-4<br />
+            Servicios Informáticos Jester Amaro, F.P.<br />
+            RIF: V-14899001-4<br />
             San Carlos, Cojedes, Venezuela
           </p>
           <p className="text-xs text-slate-600 text-center max-w-2xl leading-relaxed">
