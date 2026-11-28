@@ -1,4 +1,5 @@
 import { useEffect, useState } from 'react';
+import { enviarFormulario, telefonoValido, correoValido, mensajeDeError } from '../lib/formulario';
 import {
   Globe,
   Target,
@@ -28,7 +29,6 @@ import {
   AlertCircle,
 } from 'lucide-react';
 
-const SHEET_URL = "https://script.google.com/macros/s/AKfycbyuAmWUHUGZWMq-H4-aeb7RLcwdpL1hcCzhEMuprHZUV94YDp-KgMI5TiC7HS8lg3HW/exec";
 
 function CyberLogo({ className = 'w-9 h-9' }: { className?: string }) {
   return (
@@ -647,7 +647,7 @@ function PortfolioSection() {
               </div>
               <div className="p-6">
                 <div className={`inline-block px-3 py-1 rounded-full text-xs font-medium mb-3 ${project.borderColor} border backdrop-blur-sm text-white`}>
-                  {project.category}
+                  Consultá el proyecto
                 </div>
                 <h3 className="text-lg font-bold text-white mb-2 group-hover:text-violet-300 transition-colors">
                   {project.title}
@@ -917,32 +917,43 @@ function ContactSection() {
   });
   const [submitted, setSubmitted] = useState(false);
   const [loading, setLoading] = useState(false);
+  const [errorEnvio, setErrorEnvio] = useState('');
+  const [honeypot, setHoneypot] = useState('');
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
+    setErrorEnvio('');
+
+    if (formData.nombre.trim().length < 2) {
+      setErrorEnvio('Escribí tu nombre completo.');
+      return;
+    }
+    if (!telefonoValido(formData.telefono)) {
+      setErrorEnvio('Revisá el teléfono: debe tener al menos 6 dígitos.');
+      return;
+    }
+    if (!correoValido(formData.correo)) {
+      setErrorEnvio('Ese correo no parece válido. Revísalo o escríbenos por WhatsApp.');
+      return;
+    }
+
     setLoading(true);
+    const resultado = await enviarFormulario({
+      tipo: 'contacto',
+      nombre: formData.nombre,
+      telefono: formData.telefono,
+      correo: formData.correo,
+      mensaje: formData.mensaje,
+      website: honeypot,
+    });
+    setLoading(false);
 
-    try {
-      await fetch(SHEET_URL, {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'text/plain;charset=utf-8',
-        },
-        body: JSON.stringify({
-          nombre: formData.nombre,
-          telefono: formData.telefono,
-          correo: formData.correo,
-          mensaje: formData.mensaje
-        }),
-      });
-
+    if (resultado.ok) {
       setSubmitted(true);
       setFormData({ nombre: '', telefono: '', correo: '', mensaje: '' });
-      setTimeout(() => setSubmitted(false), 3000);
-    } catch (error) {
-      console.error('Error al enviar:', error);
-    } finally {
-      setLoading(false);
+      setTimeout(() => setSubmitted(false), 6000);
+    } else {
+      setErrorEnvio(mensajeDeError(resultado.motivo));
     }
   };
 
@@ -976,6 +987,16 @@ function ContactSection() {
               </div>
             ) : (
               <form onSubmit={handleSubmit} className="space-y-5">
+                <input
+                  type="text"
+                  name="website"
+                  value={honeypot}
+                  onChange={(e) => setHoneypot(e.target.value)}
+                  tabIndex={-1}
+                  autoComplete="off"
+                  aria-hidden="true"
+                  className="absolute opacity-0 pointer-events-none -z-10 h-0 w-0"
+                />
                 <div>
                   <label className="block text-sm font-medium text-slate-300 mb-2">Nombre completo</label>
                   <input
@@ -1020,6 +1041,12 @@ function ContactSection() {
                     placeholder="Cuéntanos sobre tu proyecto..."
                   />
                 </div>
+                {errorEnvio && (
+                  <div className="flex items-start gap-3 p-4 rounded-xl bg-red-500/10 border border-red-500/30">
+                    <AlertCircle className="w-5 h-5 text-red-400 flex-shrink-0 mt-0.5" />
+                    <p className="text-sm text-red-300">{errorEnvio}</p>
+                  </div>
+                )}
                 <button
                   type="submit"
                   disabled={loading}
